@@ -4,6 +4,7 @@ export class Item extends AbstractEntity {
 	constructor(game, x, y, width, height, data) {
 		super(game, x, y, width, height);
 		this.data = data;
+		this.type = "item";
 	}
 
 	update() {

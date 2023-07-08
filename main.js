@@ -38,9 +38,17 @@ const game = new Game(canvas);
 // }
 
 // animate();
+const lastTimer = (new Date()).getTime();
 
 const loop = () => {
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+
+  
+
+
+
+
   game.update();
   game.draw(ctx);
   requestAnimationFrame(loop);

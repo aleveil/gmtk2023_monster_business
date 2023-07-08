@@ -7,6 +7,7 @@ export class Button extends AbstractEntity {
     this.color = color;
     this.callback = callback;
     this.cooldown = 0;
+    this.type = "button";
   }
 
   update() {
