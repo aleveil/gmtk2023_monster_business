@@ -12,12 +12,22 @@ export class Building extends AbstractEntity {
     super(game, x, y, width, height);
 
     this.data = data;
+		this.type = "building";
 		this.inputSlots = [];
 		this.outputSlot = null;
   }
 
-  update() {
+	takeInput(item) {
+		this.inputSlots.push(item);
+	}
 
+	giveOutput() {
+		const item = this.outputSlot;
+		this.outputSlot = null;
+		return item;
+	}
+
+  update() {
 	}
 
   draw(ctx) {

@@ -11,8 +11,17 @@ const ctx = canvas.getContext("2d");
 
 const game = new Game(canvas);
 
+const lastTimer = (new Date()).getTime();
+
 const loop = () => {
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+
+  
+
+
+
+
   game.update();
   game.draw(ctx);
   requestAnimationFrame(loop);

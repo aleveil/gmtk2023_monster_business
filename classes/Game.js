@@ -4,7 +4,7 @@ import { EmptyScene } from "./scenes/EmptyScene";
 import { MouseHandler } from "./MouseHandler";
 
 export class Game {
-
+	
 	items = {
 		food: {
 			id: 0,
@@ -98,10 +98,12 @@ export class Game {
     this.width = canvas.width;
     this.height = canvas.height;
     this.mouse = new MouseHandler(canvas);
+		this.frames = 0;
   }
 
   update() {
     this.currentScene.update();
+		this.frames++;
   }
 
   draw(ctx) {
