@@ -6,9 +6,14 @@ export class Worker extends AbstractEntity {
     this.direction = { x: 0, y: 0 };
     this.target = { x: 500, y: 500 };
     this.speed = 5;
+    this.sprite = new Image();
+    this.sprite.src = "/goblinSprite-Sheet.png";
+    this.frameY = 0;
+    this.staggerFrame = 5;
   }
 
   update() {
+    console.log(this);
     if (this.target) {
       const vector = {
         x: this.position.x - this.target.x,
@@ -26,12 +31,19 @@ export class Worker extends AbstractEntity {
   }
 
   draw(ctx) {
-    ctx.fillStyle = "green";
-    ctx.fillRect(
+    let position = Math.floor(this.game.frame / this.staggerFrame) % 4;
+    let frameX = 16 * position;
+    console.log(frameX);
+    ctx.drawImage(
+      this.sprite,
+      frameX,
+      this.frameY * 16,
+      16,
+      16,
       this.position.x,
       this.position.y,
-      this.scale.width,
-      this.scale.height
+      128,
+      128
     );
   }
 }
