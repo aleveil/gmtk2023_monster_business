@@ -12,44 +12,10 @@ const ctx = canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
 const game = new Game(canvas);
 
-
-
-
-
-
-
-// const playerImage = new Image();
-// playerImage.src = "./public/BackGoblin-Sheet.png";
-// const spriteWidth = 16 ; 
-// const spriteHeight = 16;
-// let frameX = 0;
-// let frameY = 0;
-// let gameFrame = 0;
-// const staggerFrame = 10;
-
-// function animate() {
-//   ctx.clearRect(0, 0, canvas.width, canvas.height);
-//   let position = Math.floor(gameFrame / staggerFrame) % 4;
-//   frameX = spriteWidth * position ;
-//   ctx.drawImage(playerImage, frameX , frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, canvas.width, canvas.height);
-  
-//   gameFrame++;
-//   requestAnimationFrame(animate);
-// }
-
-// animate();
-const lastTimer = (new Date()).getTime();
-
-const loop = () => {
+const loop = (time) => {
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-
-  
-
-
-
-
-  game.update();
+  game.update(time);
   game.draw(ctx);
   requestAnimationFrame(loop);
 }

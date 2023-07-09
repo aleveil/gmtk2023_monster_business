@@ -1,3 +1,5 @@
+let idCounter = 0;
+
 export class AbstractEntity {
   constructor(game, x, y, width, height) {
     this.game = game;
@@ -9,6 +11,7 @@ export class AbstractEntity {
       width: width,
       height: height,
     };
+		this.id = idCounter++;
   }
 
   update() {}
